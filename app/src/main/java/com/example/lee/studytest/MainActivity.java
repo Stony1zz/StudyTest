@@ -1,6 +1,7 @@
 package com.example.lee.studytest;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.io.FileReader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,11 +22,16 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener ( new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Toast.makeText(MainActivity.this,"You Click button 1",
-                Toast.LENGTH_LONG).show();
-                Intent intent = new Intent("com.example.lee.ACTION_START");
-                intent.addCategory("com.example.lee.MY_CATEGORY");
+//                Toast.makeText(MainActivity.this,"You Click button 1",
+//                Toast.LENGTH_LONG).show();
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse("http://www.GitHub.com"));
+//                startActivity(intent);//关于Intent的网页活动响应
+                String data = "Hello SecondActivity";
+                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                intent.putExtra("extra_data",data);
                 startActivity(intent);
+            }
                 /*
                 对于隐式Intent和显示Intent的浅谈
                 对于显示Intent来说，更多的是明确响应的组件，在同一程序中的应用是比较
@@ -38,8 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 不精确但是对于这个问题你也可以多设置几个匹配量用来提高匹配精度，但如果只是简单
                 的Intent响应，显示的操作似乎更方便进行，由于是刚刚看完理解或许不是十分透彻
                 之后再进行补充
+                android:scheme:用于指定数据的协议部分，如上例中的http部分
+                android:host： 用于制定数据的主机名部分，如上例中的www.GitHub.com部分
+                android:port:  用于指定数据的端口部分，一般紧随在主机名之后
+                Android:path:  用于指定主机名和端口之后的部分，如一网址中跟在域名之后的内容
+                android:mimeType：用于指定可以处理的数据类型，允许使用通配符的方式进行指定
                  */
-            }
         });
     }
 

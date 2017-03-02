@@ -17,13 +17,22 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity"
+        <activity
+            android:name=".SecondActivity"
             android:label="This is SecondActivity">
             <intent-filter>
-                <action android:name="com.example.lee.ACTION_START"/>.
+                <action android:name="com.example.lee.ACTION_START"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="com.example.lee.MY_CATEGORY"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <!--<uses-permission  android:name="android.permission.CALL_PHONE" />-->
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+        </intent-filter>
         </activity>
     </application>
 
