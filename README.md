@@ -4,9 +4,11 @@
 ####1.Integer.parseInt("3");
  > Integer：是JAVA的内建类。
  > ParseInt:Integer的一个方法，能够将String解析成int采用String的参数该语句的功能是将String转化成为int
+ 
 ####2.for(int cell: locationCells ){}
  > int cell:声明出带有数组元素的变量，在循环的每次循环中，此变量的值都会带有不同的数组元素，知道跳出循环为止
  > locationCells:要被诸葛执行过的数组，每循环一次数组的下一个元素都赋给变量“cell”；
+ 
 ####3.numOfHits++
 ####4.break;
 
