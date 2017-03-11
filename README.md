@@ -70,4 +70,77 @@ class SimpleDotCom{
 ###继承
 继承是以一种普遍语法的实现在C++中同样有这样的应用。
 ------
-继承在这里的理解是为了处理在同一函数调用时候应对不同的对象的一种方法具体代码：
+继承在这里的理解是为了方便程序的多元调用已经实现面对对象编写程序的基本方法：
+```java
+public class Salary {
+ 
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+ 
+        //用继承，重写方法，都是调用的wages()方法
+        Person personManager = new Manager();
+        System.out.println("这个人的工资是："+personManager.wages());
+        Person personEngineer = new Engineer();
+        System.out.println("这个人的工资是："+personEngineer.wages());
+        Person personWorker = new Worker();
+        System.out.println("这个人的工资是："+personWorker.wages());
+    }
+ 
+}
+ 
+//人类
+class Person {
+    public String wages(){
+        return "";
+    }
+}
+//经理类
+class Manager extends Person{
+    public String wages(){
+        return "5000/月";
+    }
+}
+//工程师类
+class  Engineer extends Person{
+    public String wages(){
+        return "3000/月";
+    }
+}
+//工人类
+class Worker extends Person{
+    public String wages(){
+        return "2000/月";
+    }
+}
+
+```
+.在上述的例子中，Manager，Engineer，Worker继承了Person的方法继承在这里体现的是将父类的Public和Protect的板块进行继承是指拥有父类的模块功能包括对象以及方法，这样的好处是在我们编写多个对象当重复使用一种变量或者方法的时候可以不用重复编写，提高编程的效率同时在继承以后我们还可以利用覆盖的方法来自定义子类函数的实现。在但覆盖的时候注意不能降低方法或者参数的存取权限级别，举个例子就是不可以private转化为public。
+####重载（overload）
+>重载是一种C++中常见的方法
+>为了实现对于一种方法的多类参数实行但是在使用的过程中要注意以下几点：
+1.返回类型可以不同.   
+你可以任意的改变重在方法的返回类型，只要所有的覆盖使用不同的参数即可。
+2.不能只改变返回类型     
+如果只有返回类型不同，但是参数一样，这是不允许的。编译器不会让这样的事情过关。就算是重载，也要让返回类型是父类版返回类型的子类。重载的条件是要使用不同的参数，此时返回类型可以自由地定义     
+3.可以更改存储权限           
+你可以任意地设定overload版method的存取权限。
+
+```java
+public class Overloads{
+ String uniqueID;
+ public int addNums(int a , int b ){
+ 	return a+b;
+	}
+public double addNums(double a , double b ){
+ 	return a+b;
+	}
+public void setUniqueID(String theID){
+	uniqueID = theID;
+}
+public void setUniqueID(int ssNumber){
+	String numString = ""+ssNumber;
+	setUniquyeID(numString);
+}
+}
