@@ -2,7 +2,7 @@
 ##Java*Head First*的笔记
 ###战舰世界的笔记
 ####1.Integer.parseInt("3");
- > Integer：是JAVA的内建类。
+ > Integer：是JAVA的内建类。 
  > ParseInt:Integer的一个方法，能够将String解析成int采用String的参数该语句的功能是将String转化成为int
  
 ####2.for(int cell: locationCells ){}
@@ -66,3 +66,8 @@ class SimpleDotCom{
 返回list中元素的一个数、
 ####7.get(int index)
 返回当前索引参数的对象
+##继承与多态
+###继承
+继承是以一种普遍语法的实现在C++中同样有这样的应用。
+------
+继承在这里的理解是为了处理在同一函数调用时候应对不同的对象的一种方法具体代码：
